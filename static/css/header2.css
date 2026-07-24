@@ -1,0 +1,178 @@
+@charset "utf-8";
+@import url(common.css);
+
+/* 작업중... */
+/* body * {outline: 1px dotted lime;} */
+
+/* layout: flex */
+#header {
+    background: var(--color-primary); /* bg */
+    padding: 0 50px; /* p0-50 */
+}
+#header a {
+    color: var(--color-white); /* c */
+}
+.container {
+    height: 95px; /* h95 */
+    display: flex; /* df */
+    align-items: center; /* aic */
+    justify-content: space-between; /* jcsb */
+}
+
+/* logo */
+.logo {
+    width: 207px; /* w207 */
+    /* height: 69px; */ /* h69 */
+    font-size: 1.375rem; /* fz22 */
+    letter-spacing: 0.3rem; /* ls.3rem */
+    text-align: center; /* tac */
+}
+.logo span {
+    display: block; /* db */
+    font-size: var(--fz-sm); /* fz */
+}
+
+/* GNB */
+/* depth1 */
+.depth1 {
+    display: flex; /* df */
+    gap: 75px; /* g75 */
+    text-align: center; /* tac */
+}
+.depth1 > li {
+    flex: 1 0 200px;
+    /* width: 200px; */ /* w200 */
+    position: relative; /* po */
+}
+.depth1 > li > a {
+    position: relative; /* po */
+    font-size: var(--fz-lg); /* fz */
+    padding: 10px 0; /* p10-0 */
+    font-weight: bold; /* fwb */
+}
+#header .depth1 > li > a:hover {
+    color: #ccc; /* c#ccc */
+}
+.depth1 > li > a::after {
+    content: ""; /* ct */
+    position: absolute; /* poa */
+    left: 0; /* l0 */
+    bottom: 0px; /* b0 */
+    width: 100%; /* w100p */
+    border-bottom: 2px solid #c78f66; /* bdb */
+    transform:scaleX(0); /* trf:scx */
+    transition: 0.3s; /* trs.3s */
+}
+.depth1 > li > a:hover::after {
+    transform: scaleX(1); /* trf:scx */
+}
+
+/* depth2 */
+.depth2 {
+    /* display: none; */ /* dn */
+    position: absolute; /* poa */
+    width: 100%; /* w100p */
+    height: 0; /* h0 */
+    overflow:hidden; /* o */
+    transition: 0.3s; /* trs.3s */
+    z-index: 10; /* z10 */
+    padding-top: 20px;
+}
+.depth2.active {
+    height: 240px; /* h240 */
+}
+.depth2 li {
+    padding: 2px 8px; /* p2-8 */
+    background: #ccc;
+}
+.depth2 li:first-child {
+    padding-top: 16px;
+    /* 개별속성 */
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 20px; */
+    /* 속기형 */
+    border-radius: 20px 20px 0 0; /* borr */
+}
+.depth2 li:last-child {
+    padding-bottom: 16px;
+    border-radius: 0 0 20px 20px; /* borr */
+}
+
+/* 
+    CSS 우선순위
+       !important(키워드) > id > class > tag(type)
+*/
+#header .depth2 a {
+    color: #333;
+}
+.sub-bg {
+    z-index: -1; /* z-1 */
+    position: absolute; /* poa */
+    top: 80px; /* t80 */
+    left: 0; /* l0 */
+    width: 100%; /* w100p */
+    height: 0; /* h0 */
+    background: #ddd; /* bg */
+    transition: 0.3s; /* trs.3s */
+    overflow: hidden; /* o */
+}
+.sub-bg.active {
+    height: 220px; /* h220 */
+}
+
+/* Util */
+.util {
+    display: flex; /* df */
+    gap: 15px; /* g15 */
+}
+
+/* SNS */
+.sns {
+    vertical-align: middle; /* vam */
+}
+.sns-link {
+    position: relative; /* po */
+}
+.sns-link span {
+    opacity: 1; /* op1 */
+    transition: opacity .2s ease-in-out; /* trs */
+}
+
+/* 폰트어썸 유튜브 아이콘 */
+.sns-link::before {
+    content: '\f167'; /* ct */
+    font-family: 'Font Awesome 6 Brands'; /* ff */
+    font-size: 28px; /* fz28 */
+    color: #f00; /* c#f00 */
+    position: absolute; /* poa */
+    top: 50%; /* t50p */
+    left: 50%; /* l50p */
+    transform: translate(-50%, -50%); /* trft */
+    opacity: 0; /* op0 */
+}
+.sns:hover .sns-link::before {
+    opacity: 1; /* op1 */
+    transition: opacity 0.2s ease-in-out; /* trs */
+}
+.sns:hover span {
+    opacity: 0; /* op0 */
+}
+
+/* 구분점 */
+.sns::after {
+    display: inline-block; /* dib */
+    content: ''; /* ct */
+    width: 4px; /* w4 */
+    height: 4px; /* h4 */
+    border-radius: 50%; /* bdrs */
+    background: var(--color-white); /* bg */
+    margin-left: 8px; /* ml15 */
+    vertical-align: middle; /* vam */
+}
+
+/* Login */
+.login {
+    display: flex; /* df */
+    gap: 15px; /* g15 */
+    font-size: var(--fz-sm); /* fz */
+}

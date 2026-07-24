@@ -1,0 +1,179 @@
+@charset "utf-8";
+@import url(common.css);
+
+/* layout: flex */
+#header {
+    background: var(--color-primary);
+    padding: 0 50px; /* p0-50 */
+}
+#header a {
+    color: var(--color-white);
+}
+.container {
+    /* 주석: shift+alt+a */
+    height: 395px; /* h95 */
+    display: flex; /* df */
+    flex-direction: column; /* fxdc */
+    align-items: center; /* aic */
+    justify-content: space-between; /* jcsb */
+}
+
+/* logo */
+.logo {
+    width: 207px; /* w207 */
+    /* height: 69px; */ /* h69 */
+    font-size: 1.375rem;
+    letter-spacing: 0.3rem;
+    text-align: center;
+}
+.logo span {
+    display: block;
+    font-size: var(--fz-sm);
+}
+
+/* GNB */
+/* depth1 */
+.depth1 {
+    display: flex; /* df */
+    flex-direction: column; /* fxdc */
+    gap: 75px; /* g75 */
+    text-align: center;
+}
+.depth1 > li {
+    flex: 1 0 200px;
+    /* width: 200px; */ /* w200 */
+    position: relative; /* po */
+}
+.depth1 > li > a {
+    position: relative; /* po */
+    font-size: var(--fz-lg);
+    font-weight: bold; /* fwb */
+    padding: 10px 0;
+}
+.depth1 > li > a:hover {
+    color: #ccc;
+}
+.depth1 > li > a::after {
+    content: ''; /* ct */
+    /* position이 설정된 가장 가까운 부모 기준 */
+    position: absolute; /* poa */
+    left: 0; /* l0 */
+    bottom: -8px; /* b-8 */
+    width: 100%; /* w100p */
+    border-bottom: 2px solid #c78f66;
+    transform:scaleX(0); /* trf:scx(0) */
+    transition: 0.3s; /* trs.5s */
+}
+.depth1 > li > a:hover::after {
+    transform: scaleX(1);
+}
+
+/* depth2 */
+.depth2 {
+    /* display: none; */ /* dn */
+    position: absolute; /* pa */
+    width: 100%; /* w100p */
+    height: 0; /* h0 */
+    overflow: hidden; /* o */
+    transition: 0.3s; /* trs.3 */
+    z-index: 10; /* z10 */
+    padding-top: 20px;
+}
+.depth2.active {
+    height: 240px; /* h240 */
+}
+.depth2 li {
+    padding: 2px 8px; /* p2-18 */
+    background: #ccc;
+}
+.depth2 li:first-child {
+    padding-top: 16px;
+    /* 개별속성 */
+    /* border-top-left-radius: 20px;
+    border-top-right-radius: 20px; */
+    /* 속기형 */
+    border-radius: 20px 20px 0 0; /* borr */
+}
+.depth2 li:last-child {
+    padding-top: 16px;
+    border-radius: 0 0 20px 20px; /* borr */
+}
+
+/* 
+    CSS 우선순위
+       !important(키원드) > id > class > tag(type)
+ */
+#header .depth2 a {
+    color: #333;
+}
+.sub-bg {
+    position: absolute; /* poa */
+    background: #ddd;
+    width: 100%;
+    left: 0;
+    overflow: hidden;
+    z-index: -1;
+    height: 0;
+    transition: 0.5s;
+    top: 80px;
+}
+.sub-bg.active {
+    height: 220px;
+}
+
+/* Util */
+.util {
+    display: flex;
+    gap: 15px;
+}
+
+/* SNS */
+.sns {
+    vertical-align: middle;
+}
+.sns-link {
+    position: relative; /* pos */
+}
+.sns-link span {
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+}
+
+/* 폰트어썸 유튜브 아이콘 */
+.sns-link::before {
+    content: '\f167';
+    font-family: 'Font Awesome 6 Brands';
+    font-size: 28px;
+    color: #f00;
+    position: absolute; /* posa */
+    top: 50%; /* t50p */
+    left: 50%; /* l50p */
+    transform: translate(-50%, -50%); /* trft */
+    opacity: 0;
+}
+.sns:hover .sns-link::before {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+.sns:hover span {
+    opacity: 0; /* op0 */
+}
+
+/* 구분점 */
+.sns::after {
+    display: inline-block;
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-white);
+    margin-left: 8px; /* ml15 */
+    vertical-align: middle;
+}
+
+/* Login */
+.login {
+    display: flex;
+    gap: 15px;
+    font-size: var(--fz-sm);
+}
