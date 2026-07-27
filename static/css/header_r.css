@@ -178,14 +178,18 @@
     display: none;
 }
 
-
 /* Util */
 .util {
     display: flex;
-    gap: 15px;
+    align-items: center;
+    gap: 10px;
 }
 
 /* SNS */
+.util .sns,
+.util .login {
+    display: none;
+}
 .sns {
     vertical-align: middle;
 }
