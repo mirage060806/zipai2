@@ -175,19 +175,9 @@
 } 
 
 .sub-bg {
-    z-index: -1;
-    position: absolute; /* poa */
-    top: 80px;
-    left: 0;
-    width: 100%;
-    height: 0;
-    background: var(--color-secondary);
-    transition: 0.3s;
-    overflow: hidden;
+    display: none;
 }
-.sub-bg.active {
-    height: 220px;
-}
+
 
 /* Util */
 .util {
@@ -285,6 +275,20 @@
     }
     .depth1 > li > a:hover::after {
         transform: scaleX(1);
+    }
+    .sub-bg {
+        z-index: -1;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: var(--color-secondary);
+        transition: 0.3s;
+        overflow: hidden;
+    }
+    .sub-bg.active {
+        height: 220px;
     }
 }
 /* [xl] 1200px 이상 */
