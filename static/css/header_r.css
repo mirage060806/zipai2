@@ -221,23 +221,11 @@
     opacity: 0; /* op0 */
 }
 
-/* 구분점 */
-.sns::after {
-    display: inline-block;
-    content: '';
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--color-white);
-    margin-left: 8px; /* ml15 */
-    vertical-align: middle;
-}
-
 /* Login */
 .login {
     display: flex;
-    gap: 15px;
-    font-size: var(--fz-sm);
+    gap: 8px;
+    font-size: 0.75rem;
 }
 
 /* 미디어쿼리 중단점(breakpoint) */
@@ -293,6 +281,17 @@
     }
     .sub-bg.active {
         height: 220px;
+    }
+    /* 구분점 */
+    .sns::after {
+        display: inline-block;
+        content: '';
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--color-white);
+        margin-left: 8px; /* ml15 */
+        vertical-align: middle;
     }
 }
 /* [xl] 1200px 이상 */
