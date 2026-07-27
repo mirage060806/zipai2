@@ -228,6 +228,23 @@
     font-size: 0.75rem;
 }
 
+/* 햄버거 버튼 */
+.btn-hamburger {
+    display: block;
+    border: none;
+    padding: 5px;
+    background: transparent;
+}
+.btn-hamburger span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    margin: 5px 0;
+    border-radius: 3px;
+    background: var(--color-white);
+}
+
+
 /* 미디어쿼리 중단점(breakpoint) */
 /* [sm] 576px 이상 */
 @media (min-width: 576px) {
