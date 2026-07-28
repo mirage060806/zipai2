@@ -10,8 +10,8 @@ const menuOverlay = document.querySelector('.menu-overlay')
 
 
 
-// 마우스가 들어왔을 때 (mouseenter)
-header.addEventListener("mouseenter", function () {
+// 마우스가 들어왔을 때 (click)
+header.addEventListener("click", function () {
   this.classList.add("active");
   if (subBg) subBg.classList.add("active");
   
@@ -21,8 +21,8 @@ header.addEventListener("mouseenter", function () {
   });
 });
 
-// 마우스가 나갔을 때 (mouseleave)
-header.addEventListener("mouseleave", function () {
+// 마우스가 나갔을 때 (click)
+header.addEventListener("click", function () {
   this.classList.remove("active");
   if (subBg) subBg.classList.remove("active");
   
@@ -42,13 +42,11 @@ btnHamburger.addEventListener('click', function(){
   menuOverlay.classList.add('active')
 })
 
-btnClose.addEventListener('click', function(){
-  // gnb가 오른쪽(right:-100% = 제거)에서 왼쪽(right:0 = 추가)으로 등장
+// 메뉴를 열고 닫는 기능
+btnClose.addEventListener('click', closeMobileMenu);
+menuOverlay.addEventListener('click', closeMobileMenu);
+
+function closeMobileMenu(){
   gnb.classList.remove('active')
   menuOverlay.classList.remove('active')
-})
-menuOverlay.addEventListener('click', function(){
-  // gnb가 오른쪽(right:-100% = 제거)에서 왼쪽(right:0 = 추가)으로 등장
-  gnb.classList.remove('active')
-  menuOverlay.classList.remove('active')
-})
+}
