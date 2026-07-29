@@ -63,9 +63,13 @@ depth1Links.forEach(function(link){
 
         parentLi.classList.toggle('open');
         subMenu.classList.toggle('active');
-
       }
-
     }
   });
+});
+
+window.addEventListener('resize', function(){
+  if (window.innerWidth > 991) {
+    closeMobileMenu();
+  }
 });
