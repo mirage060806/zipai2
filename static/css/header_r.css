@@ -306,11 +306,28 @@
 /* 미디어쿼리 중단점(breakpoint) */
 /* [sm] 576px 이상 */
 @media (min-width: 576px) {
-    
+    /* .util {
+        gap: 15px;
+    }
+    .login {
+        gap: 15px;
+        font-size: var(--fz-sm);
+    }
+    .sns::after {
+        margin-left: 8px;
+    } */
 }
 /* [md] 768px 이상 */
 @media (min-width: 768px) {
-    
+    #header {
+        padding: 0 20px;
+    }
+    .logo {
+        font-size: 1.375rem;
+    }
+    .gnb {
+        width: 300px;
+    }
 }
 /* [lg] 992px 이상 */
 @media (min-width: 992px) {
