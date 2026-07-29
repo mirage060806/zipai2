@@ -1,17 +1,17 @@
 // 대상 요소 선택
 const header = document.querySelector("#header");
 const subBg = document.querySelector(".sub-bg");
-const depth2List = document.querySelectorAll(".depth2"); // 클래스이므로 전체 선택
-
 const btnHamburger = document.querySelector('.btn-hamburger');
 const btnClose = document.querySelector('.btn-close')
 const gnb = document.querySelector('.gnb');
 const menuOverlay = document.querySelector('.menu-overlay')
+const depth2List = document.querySelectorAll(".depth2");
+const depth1Links = document.querySelectorAll('.depth1 > li > a')
 
 
 
-// 마우스가 들어왔을 때 (click)
-header.addEventListener("click", function () {
+// 마우스가 들어왔을 때 (mouseenter)
+header.addEventListener("mouseenter", function () {
   this.classList.add("active");
   if (subBg) subBg.classList.add("active");
   
@@ -21,8 +21,9 @@ header.addEventListener("click", function () {
   });
 });
 
-// 마우스가 나갔을 때 (click)
-header.addEventListener("click", function () {
+
+// 마우스가 나갔을 때 (mouseleave)
+header.addEventListener("mouseleave", function () {
   this.classList.remove("active");
   if (subBg) subBg.classList.remove("active");
   
@@ -50,3 +51,21 @@ function closeMobileMenu(){
   gnb.classList.remove('active')
   menuOverlay.classList.remove('active')
 }
+
+depth1Links.forEach(function(link){
+  link.addEventListener('click', function(e){
+    if (window.innerWidth <= 991) {
+      const subMenu = this.nextElementSibling;
+
+      if (subMenu && subMenu.classList.contains('depth2')) {
+        e.preventDefault();
+        const parentLi = this.parentElement;
+
+        parentLi.classList.toggle('open');
+        subMenu.classList.toggle('active');
+
+      }
+
+    }
+  });
+});
