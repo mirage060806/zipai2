@@ -71,5 +71,12 @@ depth1Links.forEach(function(link){
 window.addEventListener('resize', function(){
   if (window.innerWidth > 991) {
     closeMobileMenu();
+    document.querySelectorAll('.depth1 > li').forEach(function(li){
+      li.classList.remove('open');
+    });
+    depth2List.forEach(function(depth2){
+      depth2.classList.remove('active');
+    });
+    if (subBg) subBg.classList.remove('active');
   }
 });
