@@ -335,8 +335,18 @@
         height: 95px;
     }
     .logo {
-        font-size: 1.375rem;
+        width: 207px;
     }
+
+    .gnb-header,
+    .bng-logo-area,
+    .arrow-icon,
+    .mobile-util,
+    .menu-overlay,
+    .btn-hanmurger {
+        display: none;
+    }
+
     .depth1 {
         flex-direction: row;
         gap: 30px;
